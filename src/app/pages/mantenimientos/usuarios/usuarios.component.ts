@@ -62,7 +62,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     if (termino.length === 0) {
       return this.usuarios = this.usuariosTemp;
     }
-    this.busquedasService.buscar('usuarios', termino).subscribe(resultados => {
+    this.busquedasService.buscar('usuarios', termino).subscribe((resultados: Usuario[]) => {
       this.usuarios = resultados;
     });
   }
@@ -89,7 +89,6 @@ export class UsuariosComponent implements OnInit, OnDestroy {
         });
       }
     });
-    console.log(usuario);
   }
 
   cambiarRole(usuario: Usuario) {
